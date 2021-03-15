@@ -33,7 +33,7 @@ public class Main {
         schools[0].setCapacity(1);
         //modified the first school's capacity
 
-        List<Student> studentList = new ArrayList<>();
+        List<Student> studentList = new LinkedList<>();
         //created an array list for the students
 
         studentList.addAll(Arrays.asList(students));
@@ -58,9 +58,9 @@ public class Main {
         //created the student's preference list using a simple put.
 
         Map<School, List<Student>> schoolPreferences = Map.ofEntries(
-                new HashMap.SimpleEntry<School, List<Student>>(schools[0], Arrays.asList(students[3], students[0], students[1], students[2])),
-                new HashMap.SimpleEntry<School, List<Student>>(schools[1], Arrays.asList(students[0], students[2], students[1])),
-                new HashMap.SimpleEntry<School, List<Student>>(schools[2], Arrays.asList(students[0], students[1], students[3]))
+                new TreeMap.SimpleEntry<School, List<Student>>(schools[0], Arrays.asList(students[3], students[0], students[1], students[2])),
+                new TreeMap.SimpleEntry<School, List<Student>>(schools[1], Arrays.asList(students[0], students[2], students[1])),
+                new TreeMap.SimpleEntry<School, List<Student>>(schools[2], Arrays.asList(students[0], students[1], students[3]))
         );
         //created the school's preference list using the Map.ofEntries.
 

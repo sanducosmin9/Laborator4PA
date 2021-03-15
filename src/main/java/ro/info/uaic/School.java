@@ -1,5 +1,7 @@
 package ro.info.uaic;
 
+import java.util.Objects;
+
 public class School implements Comparable<School> {
 
     private String name;
@@ -53,4 +55,5 @@ public class School implements Comparable<School> {
                 '}';
     }
     //overriding the toString for the printing
+
 }
