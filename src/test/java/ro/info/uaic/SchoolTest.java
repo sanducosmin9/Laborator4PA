@@ -33,7 +33,7 @@ class SchoolTest {
     @Test
     public void toStringTest(){
         School school = new School("nume", 5);
-        assertEquals("Student{name='nume'}", school.toString());
+        assertEquals("School{name='nume', capacity=5}", school.toString());
     }
 
 
