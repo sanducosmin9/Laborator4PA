@@ -1,5 +1,7 @@
 package ro.info.uaic;
 
+import com.github.javafaker.Faker;
+
 import java.util.*;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -12,13 +14,15 @@ public class Main {
 
     public static void compulsory(){
 
+        Faker faker = new Faker();
+
         var students = IntStream.rangeClosed(0, 3)
-                                        .mapToObj(i -> new Student("S" + i))
+                                        .mapToObj(i -> new Student(faker.funnyName().name()))
                                         .toArray(Student[]::new);
         //created the student objects
 
         var schools = IntStream.rangeClosed(0, 2)
-                                        .mapToObj(i -> new School("H" + i, 2))
+                                        .mapToObj(i -> new School(faker.university().name(), 2))
                                         .toArray(School[]::new);
         //created the school objects and set all the capacities to 2
 
@@ -36,6 +40,9 @@ public class Main {
 
         Set<School> schoolList = new TreeSet<>(Arrays.asList(schools));
         //added the schools in the TreeSet
+
+
+        // --------------Maps------------
 
 
         Map<Student, List<School>> studentPreferences = new HashMap<>();
@@ -61,7 +68,7 @@ public class Main {
 
         // ------------Querying--------------
 
-        
+
         studentList.stream()
                 .filter(student -> studentPreferences.get(student).containsAll(Arrays.asList(schools[0], schools[1])))
                 .forEach(System.out::println);
