@@ -17,7 +17,7 @@ public class Main {
         Faker faker = new Faker();
 
         var students = IntStream.rangeClosed(0, 3)
-                                        .mapToObj(i -> new Student(faker.funnyName().name()))
+                                        .mapToObj(i -> new Student(faker.artist().name()))
                                         .toArray(Student[]::new);
         //created the student objects
 
@@ -60,10 +60,14 @@ public class Main {
         );
         //created the school's preference list using the Map.ofEntries.
 
+
+        // ------------Solution-----------
+
+
         Solution solution = new Solution();
-        //solution.printSolution(schools, students);
+        solution.printSolution(studentPreferences, schoolPreferences);
         //created a solution object and printed a bare bones solution for the school and student lists.
-        //will modify if I have the chance.
+
 
 
         // ------------Querying--------------
@@ -79,7 +83,7 @@ public class Main {
                 .filter(school -> schoolPreferences.get(school).get(0).equals(students[0]))
                 .forEach(System.out::println);
         //query to print the schools who have the student given as parameter as their top priority
-
     }
+
 
 }

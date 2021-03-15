@@ -30,5 +30,11 @@ class SchoolTest {
         //test for capacity setter wrong capacity
     }
 
+    @Test
+    public void toStringTest(){
+        School school = new School("nume", 5);
+        assertEquals("Student{name='nume'}", school.toString());
+    }
+
 
 }
