@@ -23,7 +23,10 @@ public class School implements Comparable<School> {
     }
 
     public void setCapacity(int capacity) {
-        this.capacity = capacity;
+        if(capacity < 0)
+            System.out.println("Invalid number!");
+        else
+            this.capacity = capacity;
     }
 
     public void decrementCapacity() {
