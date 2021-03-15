@@ -15,6 +15,7 @@ class NameComparatorTest {
 
         assertEquals(1, comparator.compare(s1, s2));
         assertEquals(-1, comparator.compare(s2, s1));
+        assertEquals(0, comparator.compare(s1,s1));
     }
-
+    //comparator test
 }

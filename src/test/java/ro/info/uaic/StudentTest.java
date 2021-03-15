@@ -21,6 +21,16 @@ class StudentTest {
     }
 
     @Test
+    public void availableTest(){
+        Student student = new Student("nume");
+        assertEquals(true, student.isAvailable());
+
+        student.setAvailable(false);
+        assertEquals(false, student.isAvailable());
+    }
+
+
+    @Test
     public void toStringTest(){
         Student student = new Student("nume");
         assertEquals("Student{name='nume'}", student.toString());

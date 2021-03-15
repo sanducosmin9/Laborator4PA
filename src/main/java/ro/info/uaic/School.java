@@ -8,7 +8,7 @@ public class School implements Comparable<School> {
     public School(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
-    }
+    } // constructor for name and capacity
 
     public String getName() {
         return name;
@@ -17,6 +17,8 @@ public class School implements Comparable<School> {
     public void setName(String name) {
         this.name = name;
     }
+    //setter and getter for name
+
 
     public int getCapacity() {
         return capacity;
@@ -28,15 +30,20 @@ public class School implements Comparable<School> {
         else
             this.capacity = capacity;
     }
+    //setter and getter for capacity
+
 
     public void decrementCapacity() {
         capacity--;
     }
+    //just decrementing the capacity
 
     @Override
     public int compareTo(School obj) {
         return this.name.compareTo(obj.getName());
     }
+    //implementing the comparable interface to compare school objects
+
 
     @Override
     public String toString() {
@@ -45,4 +52,5 @@ public class School implements Comparable<School> {
                 ", capacity=" + capacity +
                 '}';
     }
+    //overriding the toString for the printing
 }

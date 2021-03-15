@@ -11,15 +11,17 @@ public class Solution {
 
             School school = entry.getKey();
             List<Student> studentList = entry.getValue();
+            //copied the key and value in variables
 
             System.out.print(school.getName() + " has accepted: ");
 
             for(Map.Entry<Student, List<School>> entryStudent : studentPreferences.entrySet()){
                 Student student = entryStudent.getKey();
                 List<School> schoolList = entryStudent.getValue();
+                //copied the key and value in variables
 
                 if(studentList.contains(student) && schoolList.contains(school) && student.isAvailable() && school.getCapacity() > 0) {
-                    System.out.print(student.getName() + " ");
+                    System.out.print(student.getName() + ", ");
                     student.setAvailable(false);
                     school.decrementCapacity();
                 }
@@ -28,7 +30,6 @@ public class Solution {
             }
             System.out.println();
         }
-
 
 
     }

@@ -26,6 +26,10 @@ public class Main {
                                         .toArray(School[]::new);
         //created the school objects and set all the capacities to 2
 
+
+        //-----------Streams-----------
+
+
         schools[0].setCapacity(1);
         //modified the first school's capacity
 
@@ -84,6 +88,5 @@ public class Main {
                 .forEach(System.out::println);
         //query to print the schools who have the student given as parameter as their top priority
     }
-
 
 }
